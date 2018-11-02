@@ -4,7 +4,7 @@ MAINTAINER Michael Staehler <michael.staehler.ext@dkv-mobility.com>
 
 ENV ACTIVEMQ_VERSION=5.15.2 \
     POSTGRES_JDBC_DRIVER_VERSION=9.4.1212 \
-    ACTIVEMQ_TCP=61616 \
+    ACTIVEMQ_TCP=5672 \
     ACTIVEMQ_HOME=/opt/activemq
 
 ENV ACTIVEMQ=apache-activemq-$ACTIVEMQ_VERSION    
@@ -24,7 +24,7 @@ RUN set -x && \
 
 WORKDIR $ACTIVEMQ_HOME
 
-EXPOSE 61616
+EXPOSE 5672
 EXPOSE 8161
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
